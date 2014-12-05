@@ -14,6 +14,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.melnykov.fab.FloatingActionButton;
 
 import org.joda.time.DateTime;
@@ -29,16 +31,15 @@ import java.util.Locale;
 
 public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefreshListener {
 
-    //first use of github
 
     TextView Fdate, Ftime, Tdate, Ttime, Calculatedtime;
     FloatingActionButton fabz;
     SwipeRefreshLayout swipeLayout;
     String DateOne, TimeOne, DateTwo, TimeTwo;
+    AdView AdViewz;
 
     public Boolean dateOne, oneTime, dateTwo, twoTime;
 
-    //what now
 
 
     @Override
@@ -52,6 +53,11 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
         Calculatedtime = (TextView) findViewById(R.id.calcTime);
         fabz = (FloatingActionButton) findViewById(R.id.fab);
         swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+        AdViewz = (AdView) findViewById(R.id.adView);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+        AdViewz.loadAd(adRequest);
+
 
 
         swipeLayout.setOnRefreshListener(MainActivity.this);

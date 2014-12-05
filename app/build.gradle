@@ -26,4 +26,5 @@ dependencies {
     compile 'joda-time:joda-time:2.3'
     compile 'com.github.mrengineer13:snackbar:0.4.0'
     compile 'com.github.traex.rippleeffect:library:1.2.2'
+    compile 'com.google.android.gms:play-services:6.1.+'
 }
