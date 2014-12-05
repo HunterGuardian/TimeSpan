@@ -20,6 +20,7 @@ import com.melnykov.fab.FloatingActionButton;
 
 import org.joda.time.DateTime;
 import org.joda.time.Period;
+import org.joda.time.PeriodType;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
@@ -252,7 +253,8 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
         DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd hh:mm a").withLocale(Locale.getDefault());
         DateTime oldDate = formatter.parseDateTime(text);
         DateTime newDate = formatter.parseDateTime(text2);
-        Period period = new Period(oldDate,newDate);
+        Period period = new Period(new DateTime(oldDate), new DateTime(newDate), PeriodType.yearMonthDayTime());
+        //fixed a bug in above line
 
         long elapsedYears = period.getYears();
         long elapsedMonths = period.getMonths();
