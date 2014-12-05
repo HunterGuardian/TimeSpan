@@ -38,6 +38,8 @@ public class MainActivity extends Activity implements SwipeRefreshLayout.OnRefre
 
     public Boolean dateOne, oneTime, dateTwo, twoTime;
 
+    //what now
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
